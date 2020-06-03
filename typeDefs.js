@@ -29,8 +29,33 @@ module.exports =gql`
     author:User
   }
 
+  input CreatePinInput{
+    title:String
+    image:String
+    content:String
+    latitude:Float
+    longitude:Float
+  }
+
   type Query{
       me:User
+      getPins:[Pin!]
   }
+
+  type Mutation{
+    createPin(input:CreatePinInput!):Pin
+    createComment(pinId:ID!,text:String!):Pin
+    deletePin(pinId:ID!):Pin
+  }
+
+  type Subscription {
+    
+    pinAdded : Pin
+    pinDeleted : Pin
+    pinUpdated : Pin
+
+  }
+
+
 
 `

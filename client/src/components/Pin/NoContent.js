@@ -1,9 +1,23 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
-// import Explore from "@material-ui/icons/Explore";
-// import Typography from "@material-ui/core/Typography";
+import Explore from "@material-ui/icons/Explore";
+import Typography from "@material-ui/core/Typography";
 
-const NoContent = ({ classes }) => <div>NoContent</div>;
+const NoContent = ({ classes }) =>(
+  <div className={classes.root}>
+       <Explore className={classes.icon}/>
+      <Typography
+      noWrap
+      component="h2"
+      variant="h6"
+      align="center"
+      color="textPrimary"
+      >
+Click on the map to add a pin
+      </Typography>
+
+  </div>
+)
 
 const styles = theme => ({
   root: {
