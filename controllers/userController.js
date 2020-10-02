@@ -14,10 +14,8 @@ const ticket=  await client.verifyIdToken({
     idToken: token,
     audience:process.env.OAUTH2_CLIENT_ID
 })
-// console.log({ticket})
 return ticket.getPayload()
 }catch(err){
-    console.log(err.message)
 }
 }
 
